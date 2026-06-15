@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>zamszyk</groupId>
 	<artifactId>zamszyk</artifactId>
-	<version>0.15.0-SNAPSHOT</version>
+	<version>0.15.0</version>
 	<name>zamszyk</name>
 	<description>zamszyk</description>
 	<url/>
