@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: 'jdbc:sqlite::memory:'
+  http:
+    clients:
+      redirects: dont-follow
