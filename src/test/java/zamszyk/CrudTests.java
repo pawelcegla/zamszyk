@@ -73,13 +73,13 @@ public class CrudTests {
     @WithMockUser
     void loggedInUserShouldRetrieveRestrictedBookmark() throws Exception {
         when(bookmarks.findBySlug(eq(new Slug("secret")), any(Principal.class))).thenReturn(Optional.of(new Target("test://top.secret")));
-        mvc.perform(get("/z/secret")).andExpect(redirectedUrl("test://top.secret"));
+        mvc.perform(get("/r/secret")).andExpect(redirectedUrl("test://top.secret"));
     }
 
     @Test
     @WithAnonymousUser
     void anonymousUserShouldNotRetrieveRestrictedBookmark() throws Exception {
         when(bookmarks.findBySlug(eq(new Slug("secret")), isNull(Principal.class))).thenReturn(Optional.empty());
-        mvc.perform(get("/z/secret")).andExpect(status().isNotFound());
+        mvc.perform(get("/r/secret")).andExpect(status().isNotFound());
     }
 }

@@ -14,7 +14,7 @@ import static org.springframework.http.HttpHeaders.LOCATION;
 import static org.springframework.http.HttpStatus.TEMPORARY_REDIRECT;
 
 @RestController
-@RequestMapping("/z")
+@RequestMapping("/r")
 public class Redirects {
 
     private static final Logger log = LoggerFactory.getLogger(Redirects.class);

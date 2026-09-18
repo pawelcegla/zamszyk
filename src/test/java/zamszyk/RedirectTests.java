@@ -37,22 +37,22 @@ class RedirectTests {
 
 	static Stream<Arguments> redirectsShouldWork() {
 		return Stream.of(
-				arguments("/z/foo", "test://flight.of.opportunity"),
-				arguments("/z/bar", "test://brain.access.router"),
-				arguments("/z/123", "test://one.two.three"),
-				arguments("/z/857620a5-79ed-4988-8439-382b912ef943", "test://undefined.unsafe.initial.design")
+				arguments("/r/foo", "test://flight.of.opportunity"),
+				arguments("/r/bar", "test://brain.access.router"),
+				arguments("/r/123", "test://one.two.three"),
+				arguments("/r/857620a5-79ed-4988-8439-382b912ef943", "test://undefined.unsafe.initial.design")
 		);
 	}
 
 	@Test
 	void httpNotFoundShouldBeReturnedForNonExistentBookmark() {
-		var nonExistentBookmarkResponse = RestTestClientResponse.from(rest.get().uri("/z/" + randomUUID()).exchange());
+		var nonExistentBookmarkResponse = RestTestClientResponse.from(rest.get().uri("/r/" + randomUUID()).exchange());
 		assertThat(nonExistentBookmarkResponse).hasStatus(NOT_FOUND);
 	}
 
 	@Test
 	void httpNotFoundShouldBeReturnedForMultipleSeparatorsInQuery() {
-		var multipleSeparatorsQueryResponse = RestTestClientResponse.from(rest.get().uri("/z/d-_-b").exchange());
+		var multipleSeparatorsQueryResponse = RestTestClientResponse.from(rest.get().uri("/r/d-_-b").exchange());
 		assertThat(multipleSeparatorsQueryResponse).hasStatus(NOT_FOUND);
 	}
 
