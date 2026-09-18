@@ -11,6 +11,8 @@ spring:
     name: zamszyk
   config:
     import: optional:classpath:git.properties
+  profiles:
+    default: dev
   datasource:
     hikari:
       maximum-pool-size: 1
