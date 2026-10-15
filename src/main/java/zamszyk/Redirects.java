@@ -67,6 +67,8 @@ public class Redirects {
             for(int i = 0; i < _404.length(); i++) {
                 if (_404.charAt(i) == '#') {
                     body.append(slug.value().charAt(j));
+                } else if (_404.charAt(i) == '.') {
+                    body.append(' ');
                 } else {
                     body.append(_404.charAt(i));
                 }
