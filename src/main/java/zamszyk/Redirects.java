@@ -13,6 +13,7 @@ import java.security.Principal;
 import static org.springframework.http.HttpHeaders.LOCATION;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.TEMPORARY_REDIRECT;
+import static org.springframework.http.MediaType.TEXT_PLAIN;
 
 @RestController
 @RequestMapping("/r")
@@ -71,7 +72,7 @@ public class Redirects {
                 }
                 j = (j + 1) % slug.value().length();
             }
-            return ResponseEntity.status(NOT_FOUND).body(body.toString());
+            return ResponseEntity.status(NOT_FOUND).contentType(TEXT_PLAIN).body(body.toString());
         });
     }
 }
