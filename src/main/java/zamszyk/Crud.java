@@ -51,7 +51,7 @@ public class Crud {
 
     @ModelAttribute("redirect")
     UriComponents redirect(UriComponentsBuilder builder) {
-        return baseUrl.cloneBuilder().path("z/%s").build();
+        return baseUrl.cloneBuilder().path("r/%s").build();
     }
 
     @ModelAttribute("bookmarklet")
