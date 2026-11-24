@@ -17,6 +17,8 @@ pipeline {
         stages {
           stage('Build') {
             steps {
+              sh 'java --version'
+              sh './mvnw --version'
               sh './mvnw clean package'
             }
           }
