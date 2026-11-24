@@ -1,21 +1,32 @@
 pipeline {
-    agent any
+  
+  agent any
 
+  matrix {
+    
+    axes {
+      axis {
+        name 'JDK_VERSION'
+        values 'JDK25', 'JDK27'
+      }
+    }
+    
     tools {
-        jdk 'JDK27'
+      jdk "${JDK_VERSION}"
     }
     
     stages {
-        stage('Build') {
-            steps {
-                sh './mvnw clean package'
-            }
+      stage('Build') {
+        steps {
+          sh './mvnw clean package'
         }
+      }
     }
 
     post {
-        always {
-            junit '**/target/surefire-reports/TEST-*.xml'
-        }
+      always {
+        junit '**/target/surefire-reports/TEST-*.xml'
+      }
     }
+  }
 }
