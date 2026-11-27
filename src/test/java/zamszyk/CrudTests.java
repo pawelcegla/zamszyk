@@ -55,7 +55,7 @@ public class CrudTests {
         mvc.perform(get("/__").param("target", "aHR0cHM6Ly9leGFtcGxlLm9yZy8="))
                 .andExpectAll(
                         model().attribute("target", "https://example.org/"),
-                        model().attribute("slug", "4ia"));
+                        model().attribute("slug", "4ja"));
     }
 
     @Test
