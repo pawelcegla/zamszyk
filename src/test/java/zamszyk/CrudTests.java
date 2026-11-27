@@ -44,7 +44,7 @@ public class CrudTests {
                 post("/__")
                         .contentType(APPLICATION_FORM_URLENCODED)
                         .param("slug", "ex")
-                        .param("target", "https://exampl.org")
+                        .param("target", "https://example.org")
                         .with(csrf())
         ).andExpect(redirectedUrl("https://example.org"));
     }
